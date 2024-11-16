@@ -1,11 +1,11 @@
 package lab5;
 
-public class Book {
+public class PaperBook {
 	
 	private String title;
 	private boolean isAvailable;
 	
-	public Book(String title) {
+	public PaperBook(String title) {
 		this.title = title;
 		this.isAvailable = true;
 	}
