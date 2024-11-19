@@ -1,6 +1,6 @@
 package lab5;
 
-public class PaperBook {
+public class PaperBook implements Book{
 	
 	private String title;
 	private boolean isAvailable;

@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Library {
 	 
-	private ArrayList<PaperBook> catalog = new ArrayList<>(); // Book dependency
+	private ArrayList<Book> catalog = new ArrayList<>(); // Book dependency
 	private ArrayList<Member> members = new ArrayList<>(); // Member dependency
 	
 	public Member findMemberByName(String name) {
@@ -17,10 +17,10 @@ public class Library {
 	       }
 	       return null; // Return null if not found
 	}
-	public PaperBook findBookByTitle (String title) {
-		 for (PaperBook paperBook : catalog) {
-	           if (paperBook.getTitle().equals(title)) {
-	               return paperBook; // Return the found book
+	public Book findBookByTitle (String title) {
+		 for (Book book : catalog) {
+	           if (book.getTitle().equals(title)) {
+	               return book; // Return the found book
 	           }
 	       }
 	       return null; // Return null if not found
@@ -28,8 +28,8 @@ public class Library {
 	public void addMember(Member member) {
 		members.add(member);
 	}
-	public void addBook(PaperBook paperBook) {
-		catalog.add(paperBook);
+	public void addBook(Book book) {
+		catalog.add(book);
 	}
 	public void removeMember(String name) {
 		Member member = findMemberByName(name);
@@ -42,12 +42,12 @@ public class Library {
 		}
 	}
 	public void removeBook(String title) {
-		PaperBook paperBook = findBookByTitle(title);
-		removeBook(paperBook);
+		Book book = findBookByTitle(title);
+		removeBook(book);
 	}
-	public void removeBook(PaperBook paperBook) {
-		if (paperBook != null)
-			catalog.remove(paperBook); // book stays with the member who has it
+	public void removeBook(Book book) {
+		if (book != null)
+			catalog.remove(book); // book stays with the member who has it
 	}
 	public void showMembers() {
 		Iterator<Member> memberIterator = members.iterator();
@@ -57,10 +57,10 @@ public class Library {
 	    }
 	}
 	public void showBooks() {
-		Iterator<PaperBook> bookIterator = catalog.iterator();
+		Iterator<Book> bookIterator = catalog.iterator();
 	    while(bookIterator.hasNext()) {
-		   	 PaperBook paperBook = bookIterator.next();
-		   	 System.out.println(paperBook); // book.toString()
+		   	 Book book = bookIterator.next();
+		   	 System.out.println(book); // book.toString()
 	    }
 	}
 	public int booksCount() {
