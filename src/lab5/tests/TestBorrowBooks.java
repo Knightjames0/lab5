@@ -66,4 +66,12 @@ class TestBorrowBooks {
 		
 	}
 
+	@Test
+	void checkPart6() {
+		BorrowingService borrower = new BorrowingService();
+		assertTrue(borrower.borrowBook(member1,book1).isSuccess(),"Borrowing First Book");
+		assertFalse(borrower.borrowBook(member1,book1).isSuccess(), "Attempt to borrow first book again should fail");
+		assertTrue(borrower.returnBook(member1,book1).isSuccess(), "Returning First Book");
+		assertFalse(borrower.returnBook(member1,book1).isSuccess(), "Attempt tot return first book again should fail");
+	}
 }

@@ -7,3 +7,24 @@ part 3
     Means that you don't have to change the libary and member class when adding new types of books.
 4. What did you learn about the benefits of using abstractions and interfaces in this example?
     Helping with proving a template for creating new types of books
+
+Part 5 - Dante
+1. These changes redelegate the responsibility of borrowing and returning books to the BorrowingService
+ensuring that the single responsibility principle holds for member and BorrowingService
+
+2. Another way to do this could be to make a member managing service that controls the actions that the members
+perform.
+
+3. A member is a primary functionality of the library system. As is the Borrowing service. splitting them up helps
+satisfy the dependency Inversion Principle
+
+Part 6 - Dante
+1. If there were different member types that were allowed to take out different books then the system
+could break if a member checked out a book and lent it to another member of a different type. who then returned it.
+If a book is damaged or lost it would be useful to add a flag in the return to indicate this. or a status variable to be
+updated in the book class
+There could also be issues if a member returned a different copy of the book they returned. for example returning a hardcover
+instead of a paperback
+If a client never returns a book at all then the system could get cluttered with books that dont exist anymore
+A cleaner class could be useful to remove any books that may have never been returned from the system
+
