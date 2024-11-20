@@ -1,5 +1,27 @@
 package lab5;
 
-public class AudioBook {
+public class AudioBook implements Book {
+
+	private String title;
+	private boolean isAvailable;
+	
+	public AudioBook(String title) {
+		this.title = title;
+		this.isAvailable = true;
+	}
+	@Override
+	public String getTitle() {
+		return this.getTitle();
+	}
+
+	@Override
+	public void setIsAvailable(boolean isAvailable) {
+		this.isAvailable = isAvailable;
+	}
+
+	@Override
+	public boolean getIsAvailable() {
+		return isAvailable;
+	}
 
 }

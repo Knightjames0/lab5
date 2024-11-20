@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class Library {
+public class Library{
 	 
 	private ArrayList<Book> catalog = new ArrayList<>(); // Book dependency
 	private ArrayList<Member> members = new ArrayList<>(); // Member dependency
@@ -25,12 +25,38 @@ public class Library {
 	       }
 	       return null; // Return null if not found
 	}
+	public Book findAudioBookByTitle (String title) {
+		 for (Book book : catalog) {
+	           if (book.getTitle().equals(title)) {
+	               return book; // Return the found book
+	           }
+	       }
+	       return null; // Return null if not found
+	}
+	public Book findEbookByTitle (String title) {
+		 for (Book book : catalog) {
+	           if (book.getTitle().equals(title)) {
+	               return book; // Return the found book
+	           }
+	       }
+	       return null; // Return null if not found
+	}
+	public Book findRareBookByTitle (String title) {
+		 for (Book book : catalog) {
+	           if (book.getTitle().equals(title)) {
+	               return book; // Return the found book
+	           }
+	       }
+	       return null; // Return null if not found
+	}
 	public void addMember(Member member) {
 		members.add(member);
 	}
+	
 	public void addBook(Book book) {
 		catalog.add(book);
 	}
+	
 	public void removeMember(String name) {
 		Member member = findMemberByName(name);
 		removeMember(member);
@@ -45,10 +71,12 @@ public class Library {
 		Book book = findBookByTitle(title);
 		removeBook(book);
 	}
+	
 	public void removeBook(Book book) {
 		if (book != null)
 			catalog.remove(book); // book stays with the member who has it
 	}
+	
 	public void showMembers() {
 		Iterator<Member> memberIterator = members.iterator();
 	    while(memberIterator.hasNext()) {
