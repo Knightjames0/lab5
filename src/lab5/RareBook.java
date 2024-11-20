@@ -11,7 +11,7 @@ public class RareBook implements Book{
 	}
 	@Override
 	public String getTitle() {
-		return this.getTitle();
+		return title;
 	}
 
 	@Override
