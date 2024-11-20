@@ -2,6 +2,7 @@ package lab5.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import lab5.BorrowingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import lab5.Member;
@@ -32,10 +33,10 @@ class TestRemoveMemberWithBooks {
 	
 	@Test
 	void removeMemberReturnBooks() {
-		
-		member.borrowBook(book1);
-		member.borrowBook(book2);
-		member.borrowBook(book3);
+		BorrowingService borrower = new BorrowingService();
+				borrower.borrowBook(member,book1);
+		borrower.borrowBook(member,book2);
+		borrower.borrowBook(member,book3);
 		assertAll("Check inital library state", 
 			() -> assertEquals(library.membersCount(),1),
 			() -> assertEquals(library.booksCount(),3),

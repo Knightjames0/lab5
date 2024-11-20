@@ -3,13 +3,9 @@ package lab5.tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 
+import lab5.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import lab5.Library;
-import lab5.PaperBook;
-import lab5.Member;
-import lab5.Book;
-
 
 
 class TestAddRemoveBooks {
@@ -26,7 +22,7 @@ class TestAddRemoveBooks {
 	Book book3 = new PaperBook("Moby Dick");
 	
 	Member member = new Member("Grady Booch");
-	
+	BorrowingService borrower = new BorrowingService();
 	@Test
 	void AddBooks() {
 		
@@ -62,7 +58,7 @@ class TestAddRemoveBooks {
 		AddBooks();
 		assertEquals(library.booksCount(), 3, "There should be 3 books in the library");
 		
-		member.borrowBook(book1);
+		borrower.borrowBook(member,book1);
 		assertEquals(member.borrowedBooksCount(), 1, "Should be 1 borrowed book");
 		
 		library.removeBook(book1);

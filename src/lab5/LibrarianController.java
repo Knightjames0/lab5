@@ -57,6 +57,7 @@ Book book = library.findBookByTitle(title);
 	}
 	
 	public void borrowBookByMember(String title, String name) {
+		BorrowingService borrower = new BorrowingService();
 		Member member = library.findMemberByName(name); // use library for search
 
 		Book book = library.findBookByTitle(title);  // use library for search
@@ -65,13 +66,14 @@ Book book = library.findBookByTitle(title);
 
 		Book paperBook = library.findBookByTitle(title);  // use library for search
 		if (paperBook != null && member != null)
-			member.borrowBook(paperBook); // member borrows a book, not library 
+			borrower.borrowBook(member,paperBook); // member borrows a book, not library
 
 		else 	
 			System.out.println("Either book " + title + " or member " + name + " not found.");
 	}
 	
 	public void returnBookByMember(String title, String name) {
+		BorrowingService borrower = new BorrowingService();
 		Member member = library.findMemberByName(name); // use library for search
 
 		Book book = library.findBookByTitle(title); // use library for search 
@@ -80,7 +82,7 @@ Book book = library.findBookByTitle(title);
 
 		Book paperBook = library.findBookByTitle(title); // use library for search 
 		if (paperBook != null && member != null)
-			member.returnBook(paperBook); // members returns book. 
+			borrower.returnBook(member,paperBook); // members returns book.
 
 		else  	
 			System.out.println("Either book " + title + " or member " + name + " not found.");

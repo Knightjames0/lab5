@@ -24,18 +24,6 @@ public class Member {
 	public String toString() {
 		return "Member: " + name;
 	}
-	public void borrowBook(Book book) {
-		if (book != null && book.getIsAvailable() == true) {
-			borrowedBooks.add(book);
-			book.setIsAvailable(false);
-		}
-	}
-	public void returnBook(Book book) {
-		if (book != null) {
-			borrowedBooks.remove(book);
-			book.setIsAvailable(true);
-		}
-	}
 	public void listBorrowedBooks() {
 		for (Book book : borrowedBooks)
 			System.out.println(book); // book.toString()
