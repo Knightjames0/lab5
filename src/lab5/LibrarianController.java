@@ -62,7 +62,7 @@ Book book = library.findBookByTitle(title);
 
 		Book book = library.findBookByTitle(title);  // use library for search
 		if (book != null && member != null)
-			member.borrowBook(book); // member borrows a book, not library 
+			borrower.borrowBook(member,book); // member borrows a book, not library
 
 		Book paperBook = library.findBookByTitle(title);  // use library for search
 		if (paperBook != null && member != null)
