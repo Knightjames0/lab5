@@ -1,0 +1,9 @@
+part 3
+1. Why did you introduce the Book interface, and how does this relate to the Dependency Inversion Principle?
+    To reduce the coupling between the member, libary and book class
+2. How does this design improve the flexibility of the system?
+    It allow for easy additions of new types of books.
+3. Can you explain how your changes support the Open/Closed Principle?
+    Means that you don't have to change the libary and member class when adding new types of books.
+4. What did you learn about the benefits of using abstractions and interfaces in this example?
+    Helping with proving a template for creating new types of books
