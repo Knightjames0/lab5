@@ -15,7 +15,7 @@ public class Member {
 	public String getName() {
 		return name;
 	}
-	public ArrayList<PaperBook> getBorrowedBooks() { 
+	public ArrayList<Book> getBorrowedBooks() { 
 		return borrowedBooks;
 	}
 	public void setName(String name) {

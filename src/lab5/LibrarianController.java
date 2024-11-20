@@ -36,7 +36,7 @@ public class LibrarianController {
 			System.out.println("Member " + name + " not found.");
 	}
 	public void showBook(String title) {
-		PaperBook paperBook = library.findBookByTitle(title);
+		Book paperBook = library.findBookByTitle(title);
 		if (paperBook != null)
 			System.out.println(paperBook);
 		else 
@@ -52,7 +52,7 @@ public class LibrarianController {
 	
 	public void borrowBookByMember(String title, String name) {
 		Member member = library.findMemberByName(name); // use library for search
-		PaperBook paperBook = library.findBookByTitle(title);  // use library for search
+		Book paperBook = library.findBookByTitle(title);  // use library for search
 		if (paperBook != null && member != null)
 			member.borrowBook(paperBook); // member borrows a book, not library 
 		else 	
@@ -61,7 +61,7 @@ public class LibrarianController {
 	
 	public void returnBookByMember(String title, String name) {
 		Member member = library.findMemberByName(name); // use library for search
-		PaperBook paperBook = library.findBookByTitle(title); // use library for search 
+		Book paperBook = library.findBookByTitle(title); // use library for search 
 		if (paperBook != null && member != null)
 			member.returnBook(paperBook); // members returns book. 
 		else  	

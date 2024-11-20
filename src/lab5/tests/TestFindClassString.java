@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import lab5.PaperBook;
 import lab5.Library;
 import lab5.Member;
+import lab5.Book;
 
 
 class TestFindClassString {
@@ -46,7 +47,7 @@ private Library library;
 	void FindBook() {
 		library.addBook(book1);
 		library.addBook(book2);
-		PaperBook paperBook = library.findBookByTitle(book1.getTitle());
+		Book paperBook = library.findBookByTitle(book1.getTitle());
 		assert(paperBook == book1);
 		assert(library.booksCount() == 2);
 		library.removeBook(book2);
