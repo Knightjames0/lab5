@@ -22,9 +22,7 @@ public class LibrarianController {
 	public void addMember(String name) {
 		library.addMember(new Member(name)); // Member class constructor dependency
 	}
-	public void removePaperBook(String title) {
-		library.removeBook(title); // remove 
-	}
+	
 	public void removeMember(String name) {
 		library.removeMember(name);
 	}
@@ -87,21 +85,18 @@ Book book = library.findBookByTitle(title);
 		else  	
 			System.out.println("Either book " + title + " or member " + name + " not found.");
 	}
-	public void removeEbook(String title) {
+	public void removeBook(String title) {
 		library.removeBook(title); // remove 
 	}
+	
 	public void addEbook(String title) {
 		library.addBook(new Ebook(title));  // Book class constructor dependency
 	}
-	public void removeAudioBook(String title) {
-		library.removeBook(title); // remove 
-	}
+	
 	public void addAudioBook(String title) {
 		library.addBook(new AudioBook(title));  // Book class constructor dependency
 	}
-	public void removeRareBook(String title) {
-		library.removeBook(title); // remove 
-	}
+	
 	public void addRareBook(String title) {
 		library.addBook(new RareBook(title));  // Book class constructor dependency
 	}
