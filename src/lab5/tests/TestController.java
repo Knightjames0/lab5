@@ -24,9 +24,9 @@ class TestController {
 		this.librarian = new LibrarianController(); // Fresh library: one member, three books
 		this.library = librarian.getLibrary(); 
 		librarian.addMember(memberName);
-		librarian.addBook(bookTitle1);
-		librarian.addBook(bookTitle2);
-		librarian.addBook(bookTitle3);
+		librarian.addAudioBook(bookTitle1);
+		librarian.addRareBook(bookTitle2);
+		librarian.addEbook(bookTitle3);
 	}
 
 	@Test

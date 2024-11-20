@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import lab5.Member;
 import lab5.Library;
 import lab5.PaperBook;
+import lab5.*;
 
 class TestAddRemoveMembers {
 
@@ -22,8 +23,8 @@ class TestAddRemoveMembers {
 	
 	Member member1 = new Member("Dude");
 	Member member2 = new Member("Gal");
-	PaperBook book1 = new PaperBook("Dune");
-	PaperBook book2 = new PaperBook("1984");
+	Book book1 = new PaperBook("Dune");
+	Book book2 = new PaperBook("1984");
 	
 	@Test
 	void AddMember() {

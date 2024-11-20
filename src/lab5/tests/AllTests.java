@@ -11,7 +11,8 @@ import org.junit.platform.suite.api.Suite;
 				TestBorrowBooks.class,
 				TestNotAvailableBook.class,
 				TestRemoveMemberWithBooks.class,
-				TestController.class})
+				TestController.class,
+				TestPaperBook.class})
 public class AllTests {
     // No need for test methods here; the suite will run the included classes
 }
