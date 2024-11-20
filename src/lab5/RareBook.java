@@ -1,26 +1,25 @@
 package lab5;
 
-public class PaperBook implements Book{
-	
+public class RareBook implements Book{
+
 	private String title;
 	private boolean isAvailable;
 	
-	public PaperBook(String title) {
+	public RareBook(String title) {
 		this.title = title;
 		this.isAvailable = true;
 	}
+	@Override
 	public String getTitle() {
-		return title;
+		return this.getTitle();
 	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String toString() {
-		return "Paper Book: " + title;
-	}
+
+	@Override
 	public void setIsAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
 	}
+
+	@Override
 	public boolean getIsAvailable() {
 		return isAvailable;
 	}
