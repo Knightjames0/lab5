@@ -16,7 +16,7 @@ public class PaperBook implements Book{
 		this.title = title;
 	}
 	public String toString() {
-		return "Book: " + title;
+		return "Paper Book: " + title;
 	}
 	public void setIsAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;

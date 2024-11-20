@@ -21,9 +21,9 @@ class TestAddRemoveBooks {
 		 this.library = new Library(); // empty library for each test
 	}
 
-	PaperBook book1 = new PaperBook("Dune");
-	PaperBook book2 = new PaperBook("1984");
-	PaperBook book3 = new PaperBook("Moby Dick");
+	Book book1 = new PaperBook("Dune");
+	Book book2 = new PaperBook("1984");
+	Book book3 = new PaperBook("Moby Dick");
 	
 	Member member = new Member("Grady Booch");
 	
