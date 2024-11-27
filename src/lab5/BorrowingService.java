@@ -1,13 +1,33 @@
 package lab5;
 
 public class BorrowingService implements BorrowingServiceAPI {
+	
+	public static volatile BorrowingService INSTANCE; 
+    private int borrowingLimit;
+
+    // private constructor
+    public BorrowingService() {
+        borrowingLimit = 3;
+    }
+    
+    public static BorrowingService getInstance() {
+    	if (INSTANCE == null) {
+    		synchronized(BorrowingService.class) {
+    			if (INSTANCE == null) {
+    				INSTANCE = new BorrowingService();
+    			}
+    		}
+    	}
+    return INSTANCE;
+	} 
     public BorrowingBookResult borrowBookResultSuccess = new BorrowingBookResult(true,"Borrowing was successful");
     public BorrowingBookResult borrowBookResultFail = new BorrowingBookResult(false,"Borrowing failed. Book is Unavailable");
     public BorrowingBookResult returnBookResultSuccess = new BorrowingBookResult(true,"Book was returned succesfully");
     public BorrowingBookResult returnBookResultFail = new BorrowingBookResult(false,"Return Failed, Book does not exist in association with member");
+   
+    
     @Override
     public BorrowingBookResult borrowBook(Member member, Book book) {
-
 // Here you can implement logic to check if the book is available to
 // borrow and if the member can borrow it
 //(e.g., item limit, member status).
