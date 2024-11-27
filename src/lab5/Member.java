@@ -13,6 +13,12 @@ public class Member {
 		this.borrowedBooks = new ArrayList<>();
 		this.borrowingService = service;
 	}
+	public BorrowingService getBorrowingService() {
+		return borrowingService;
+	}
+	public void setBorrowingService(BorrowingService borrowingService) {
+		this.borrowingService = borrowingService;
+	}
 	public String getName() {
 		return name;
 	}

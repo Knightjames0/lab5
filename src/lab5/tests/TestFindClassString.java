@@ -9,20 +9,22 @@ import lab5.PaperBook;
 import lab5.Library;
 import lab5.Member;
 import lab5.Book;
+import lab5.BorrowingService;
 
 
 class TestFindClassString {
 
 	
 private Library library;
-	
+private BorrowingService service = BorrowingService.getInstance();
+
 	@BeforeEach
 	void setUp() throws Exception {
 		 this.library = new Library(); // empty library for each test
 	}
 	
-	Member member1 = new Member("Dude");
-	Member member2 = new Member("Gal");
+	Member member1 = new Member("Dude",service);
+	Member member2 = new Member("Gal",service);
 	PaperBook book1 = new PaperBook("Dune");
 	PaperBook book2 = new PaperBook("1984");
 
