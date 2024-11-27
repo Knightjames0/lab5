@@ -90,14 +90,18 @@ Book book = library.findBookByTitle(title);
 	}
 	
 	public void addEbook(String title) {
-		library.addBook(new Ebook(title));  // Book class constructor dependency
+		addBook(new EBookFactory(),title);  // Book class constructor dependency
 	}
 	
 	public void addAudioBook(String title) {
-		library.addBook(new AudioBook(title));  // Book class constructor dependency
+		addBook(new AudioBookFactory(),title);  // Book class constructor dependency
 	}
 	
 	public void addRareBook(String title) {
-		library.addBook(new RareBook(title));  // Book class constructor dependency
+		addBook(new RareBookFactory(),title);  // Book class constructor dependency
+	}
+	public void addBook(BookFactory factory, String title) {
+		library.addBook(factory.createBook(title)); // Book type depends on
+		 // the factory passed in
 	}
 }
