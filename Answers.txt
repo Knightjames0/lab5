@@ -28,3 +28,8 @@ instead of a paperback
 If a client never returns a book at all then the system could get cluttered with books that dont exist anymore
 A cleaner class could be useful to remove any books that may have never been returned from the system
 
+Part 8 
+1. It abstracts the creation of new book from librarianController placing them each in there own factory class 
+    for each book type without adding each to the LibaryController
+2. Allows for adding new Books without modifing the LibaryController or LibaryController
+3. It abstract the book creation proccess making the code harder to read, debug.

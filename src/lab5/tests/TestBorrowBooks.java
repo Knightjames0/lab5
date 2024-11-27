@@ -2,6 +2,7 @@ package lab5.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import lab5.BorrowingBookResult;
 import lab5.BorrowingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,11 +17,11 @@ class TestBorrowBooks {
 	
 	PaperBook book1 = new PaperBook("Dune");
 	PaperBook book2 = new PaperBook("1984");
-	private BorrowingService service = BorrowingService.getInstance();
+	private BorrowingService service;
 
 	@BeforeEach
 	void setUp() throws Exception {
-
+		service = BorrowingService.getInstance();
 		member1 = new Member("Alice",service); // flush borrowedBook array 
 		member2 = new Member("Bob",service);   // flush borrowedBook array 
 		book1.setIsAvailable(true);
@@ -74,5 +75,19 @@ class TestBorrowBooks {
 		assertFalse(borrower.borrowBook(member1,book1).isSuccess(), "Attempt to borrow first book again should fail");
 		assertTrue(borrower.returnBook(member1,book1).isSuccess(), "Returning First Book");
 		assertFalse(borrower.returnBook(member1,book1).isSuccess(), "Attempt tot return first book again should fail");
+	}
+
+	@Test
+	void bookAlreadyBorrowed(){
+		BorrowingBookResult result;
+		result = service.borrowBook(member1, book1);
+		assertTrue(result.isSuccess());
+		result = service.borrowBook(member2, book1);
+		assertFalse(result.isSuccess());
+	}
+
+	@Test
+	void bookDontExist(){
+
 	}
 }
