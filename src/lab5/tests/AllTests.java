@@ -15,7 +15,8 @@ import org.junit.platform.suite.api.Suite;
 				TestPaperBook.class,
 				TestEBook.class,
 				TestRareBook.class,
-				TestAudioBook.class})
+				TestAudioBook.class,
+				TestBookFactories.class})
 public class AllTests {
     // No need for test methods here; the suite will run the included classes
 }
