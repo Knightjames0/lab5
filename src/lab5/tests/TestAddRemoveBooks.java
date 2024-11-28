@@ -71,5 +71,28 @@ class TestAddRemoveBooks {
 		assertEquals(b, book1,"The owned book should be the removed book");
 	}
 	
+	//New test for ebooks and audoi books for P4
+	@Test
+	public void testAddAndRemoveBooks() {
+	    Library library = new Library();
+
+	    Book ebook = new Ebook("Test EBook");
+	    library.addBook(ebook);
+	    assertEquals(1, library.booksCount());
+	    assertNotNull(library.findBookByTitle("Test EBook"));
+
+	    Book audioBook = new AudioBook("Test AudioBook");
+	    library.addBook(audioBook);
+	    assertEquals(2, library.booksCount());
+	    assertNotNull(library.findBookByTitle("Test AudioBook"));
+
+	    library.removeBook("Test EBook");
+	    assertEquals(1, library.booksCount());
+	    assertNull(library.findBookByTitle("Test EBook"));
+
+	    library.removeBook("Test AudioBook");
+	    assertEquals(0, library.booksCount());
+	    assertNull(library.findBookByTitle("Test AudioBook"));
+	}
 	
 }
